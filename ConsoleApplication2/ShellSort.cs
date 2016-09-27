@@ -17,6 +17,7 @@ namespace ConsoleApplication2
             {
                 for (int i = 0; i < (array.Length - step); i++)
                 {
+                    count++;
                     j = i;
                     while ((j >= 0) && (array[j] > array[j + step]))
                     {
@@ -24,11 +25,13 @@ namespace ConsoleApplication2
                         array[j] = array[j + step];
                         array[j + step] = tmp;
                         j -= step;
-                        count++;
+                       
                     }
                 }
                 step = step / 2;
             }
+            Console.WriteLine("Counts of iterations:" + count);
+
             return array;
 
         }

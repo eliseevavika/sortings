@@ -17,15 +17,17 @@ namespace ConsoleApplication2
             {
                 for (int j = 0; j < array.Length - i - 1; j++)
                 {
+                    count++;
                     if (array[j] > array[j + 1])
                     {
                         int k = array[j];
                         array[j] = array[j + 1];
                         array[j + 1] = k;
-                        count++;
+                        
                     }
                 }
             }
+            Console.WriteLine("Counts of iterations:" + count);
 
             return array;
 

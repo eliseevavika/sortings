@@ -46,9 +46,9 @@ namespace ConsoleApplication2
                 case 4:
                     SelectionSort.Sort(array);
                     break;
-                /* case 5:
-                     X.sort();
-                     break;*/
+              case 5:
+                    InsertionSort.Sort(array);
+                     break;
                 default:
                     Console.WriteLine("Method of number " + sortMetod + " is absent");
                     break;

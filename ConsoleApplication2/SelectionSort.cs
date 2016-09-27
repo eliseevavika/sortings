@@ -10,15 +10,18 @@ namespace ConsoleApplication2
     {
         public static int[] Sort (int[] array)
         {
+            int count = 0;
             int min, temp;
             int length = array.Length;
 
             for (int i = 0; i < length - 1; i++)
             {
+               
                 min = i;
 
                 for (int j = i + 1; j < length; j++)
                 {
+                    count++;
                     if (array[j] < array[min])
                     {
                         min = j;
@@ -32,6 +35,8 @@ namespace ConsoleApplication2
                     array[min] = temp;
                 }
             }
+            Console.WriteLine("Counts of iterations:" + count);
+
             return array;
         }
     }
