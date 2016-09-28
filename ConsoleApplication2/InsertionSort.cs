@@ -12,17 +12,20 @@ namespace ConsoleApplication2
     {
         public static int[] Sort(int[] array)
         {
-            int count = 0;
+            int count1 = 0;
+            int count2 = 0;
+
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
 
             for (int i = 1; i < array.Length; i++)
             {
-                count++;
+                count1++;
                 int cur = array[i];
                 int j = i;
                 while (j > 0 && cur < array[j - 1])
                 {
+                    count2++;
                     array[j] = array[j - 1];
                     j--;
                 }
@@ -30,10 +33,11 @@ namespace ConsoleApplication2
             }
 
             stopwatch.Stop();
-            Console.WriteLine("InsertionSort");
 
-            Console.WriteLine("Counts of iterations:" + count);
+            Console.WriteLine("***InsertionSort***");
+            Console.WriteLine("Counts of iterations:" + (count1+count2));
             Console.WriteLine("Time elapsed: {0}", stopwatch.Elapsed);
+            Console.WriteLine();
 
             return array;
 

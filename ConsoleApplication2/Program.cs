@@ -29,7 +29,7 @@ namespace ConsoleApplication2
             }
 
             WriteToConsole(array);
-            Console.WriteLine("Enter sort method (1-5):");
+            Console.WriteLine("Enter sort method (0 or 1-5):");
             int sortMetod = Convert.ToInt32(Console.ReadLine());
 
 

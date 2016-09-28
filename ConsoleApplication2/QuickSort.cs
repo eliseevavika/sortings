@@ -45,10 +45,10 @@ namespace ConsoleApplication2
             Sort(array, 0, array.Length - 1);
 
             stopwatch.Stop();
-            Console.WriteLine("QuickSort");
-
+            Console.WriteLine("***QuickSort***");
             Console.WriteLine("Counts of iterations:" + count);
             Console.WriteLine("Time elapsed: {0}", stopwatch.Elapsed);
+            Console.WriteLine();
 
             return array;
            
