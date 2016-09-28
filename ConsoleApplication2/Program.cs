@@ -29,26 +29,23 @@ namespace ConsoleApplication2
             }
 
             WriteToConsole(array);
+
             Console.WriteLine("Enter sort method (0 or 1-5):");
             int sortMetod = Convert.ToInt32(Console.ReadLine());
-
-
-          
-
+            
             switch (sortMetod)
             {
                 case 0:
-                    BubbleSort.Sort(array);
-                    ShellSort.Sort(array);
-                    QuickSort.Sort(array);
-                    SelectionSort.Sort(array);
+                    
+                    BubbleSort.Sort(Copy(array));
+                    ShellSort.Sort(Copy(array));
+                    QuickSort.Sort(Copy(array));
+                    SelectionSort.Sort(Copy(array));
                     InsertionSort.Sort(array);
-
 
                     break;
                 case 1:
                     BubbleSort.Sort(array);
-
                     break;
                 case 2:
                     ShellSort.Sort(array);
@@ -66,18 +63,26 @@ namespace ConsoleApplication2
                     Console.WriteLine("Method of number " + sortMetod + " is absent");
                     break;
             }
+
             WriteToConsole(array);
             Console.ReadLine();
         }
+
         private static void WriteToConsole(int[] array)
         {
             for (int i = 0; i < array.Length; i++)
             {
                 Console.Write(array[i] + " ");
             }
-            Console.WriteLine(" ");
+            Console.WriteLine();
         }
 
+        private static int[] Copy(int[] array)
+        {
+            int[] copy = new int[array.Length];
+            Array.Copy(array, copy, copy.Length);
+            return copy;
+        }
 
     }
 }

@@ -13,8 +13,6 @@ namespace ConsoleApplication2
 
         static int Partition(int[] array, int start, int end)
         {
-            
-
             int marker = start;
             for (int i = start; i <= end; i++)
             {
@@ -22,18 +20,14 @@ namespace ConsoleApplication2
 
                 if (array[i] <= array[end])
                 {
-                    int temp = array[marker]; // swap
+                    int temp = array[marker]; 
                     array[marker] = array[i];
                     array[i] = temp;
                     marker += 1;
-                    
+
                 }
-                
-
-
             }
-
-
+            
             return marker - 1;
         }
 

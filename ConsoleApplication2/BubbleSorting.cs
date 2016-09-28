@@ -33,6 +33,7 @@ namespace ConsoleApplication2
             }
 
             stopwatch.Stop();
+
             Console.WriteLine("***BubbleSort***");
             Console.WriteLine("Counts of iterations:" + count);
             Console.WriteLine("Time elapsed: {0}", stopwatch.Elapsed);
