@@ -7,6 +7,7 @@ using ConsoleApplication2;
 
 
 
+
 namespace ConsoleApplication2
 {
     public class Program
@@ -31,8 +32,20 @@ namespace ConsoleApplication2
             Console.WriteLine("Enter sort method (1-5):");
             int sortMetod = Convert.ToInt32(Console.ReadLine());
 
+
+          
+
             switch (sortMetod)
             {
+                case 0:
+                    BubbleSort.Sort(array);
+                    ShellSort.Sort(array);
+                    QuickSort.Sort(array);
+                    SelectionSort.Sort(array);
+                    InsertionSort.Sort(array);
+
+
+                    break;
                 case 1:
                     BubbleSort.Sort(array);
 

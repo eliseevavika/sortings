@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace ConsoleApplication2
 {
@@ -13,7 +14,8 @@ namespace ConsoleApplication2
             int count = 0;
             int min, temp;
             int length = array.Length;
-
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
             for (int i = 0; i < length - 1; i++)
             {
                
@@ -35,6 +37,10 @@ namespace ConsoleApplication2
                     array[min] = temp;
                 }
             }
+            stopwatch.Stop();
+            Console.WriteLine("SelectionSort");
+
+            Console.WriteLine("Time elapsed: {0}", stopwatch.Elapsed);
             Console.WriteLine("Counts of iterations:" + count);
 
             return array;

@@ -3,14 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace ConsoleApplication2
 {
-    public class ShellSort : Program
+    public class ShellSort 
     {
         public static int[] Sort(int[] array)
         {
-           int count = 0;
+            int count = 0;
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
+
             int j;
             int step = array.Length / 2;
             while (step > 0)
@@ -30,6 +34,11 @@ namespace ConsoleApplication2
                 }
                 step = step / 2;
             }
+
+            stopwatch.Stop();
+            Console.WriteLine("ShellSort");
+
+            Console.WriteLine("Time elapsed: {0}", stopwatch.Elapsed);
             Console.WriteLine("Counts of iterations:" + count);
 
             return array;

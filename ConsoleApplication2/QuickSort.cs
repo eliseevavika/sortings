@@ -3,19 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace ConsoleApplication2
 {
-    class QuickSort:Program
+    class QuickSort
     {
         static int count = 0;
 
         static int Partition(int[] array, int start, int end)
         {
+            
+
             int marker = start;
             for (int i = start; i <= end; i++)
             {
                 count++;
+
                 if (array[i] <= array[end])
                 {
                     int temp = array[marker]; // swap
@@ -24,18 +28,30 @@ namespace ConsoleApplication2
                     marker += 1;
                     
                 }
+                
+
+
             }
-            
+
 
             return marker - 1;
         }
 
         public static int[] Sort(int[] array)
-        {
+        { 
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
+
             Sort(array, 0, array.Length - 1);
+
+            stopwatch.Stop();
+            Console.WriteLine("QuickSort");
+
             Console.WriteLine("Counts of iterations:" + count);
+            Console.WriteLine("Time elapsed: {0}", stopwatch.Elapsed);
 
             return array;
+           
         }
 
         static void Sort(int[] array, int start, int end)
